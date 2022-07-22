@@ -1,3 +1,27 @@
 General principle of the method used to select m
 
+Step 0) Creation of the two geometries and velocity field
+They correspond to the surface velocity and geometry of a glacier at two different times. They are called v1, v2 for the velocities and (s1,h1), (s2,h2) 
+for the geometries.
+
+Now I suppose I do not know the sliding parameters of Weertman law C and m, but I know the flow parameters A and n. I want to estimate m. 
+The method consists in three steps detailed below.\
+I am going to repeat theses steps with several values of m=mi
+
+Step 1) Invert the first velocity field and geometry setting m=mi, for log(A) and log(C)\
+This gives me an estimate of C associated to mi. I call this estimated slipperiness Ci.\
+No matter the value of mi, the inversion should converge towards a correct value for Ci. The fact that the inversion converges thus tells nothing about the 
+rightness of mi; this is why a second geometry is needed.
+
+Step 2) Launch a diagnostic run with the second geometry and the parameters Ci, mi (and A, n)\
+This gives me a calculated velocity v2calc(Ci,mi)\
+If mi is the right m, then Ci is close to the right C and v2calc is almost equal to v2. Otherwise, there is no reason why v2calc and v2 should be equal, because
+v1 and v2 are different.
+
+Step 3) Minimise the misfit between v2 and v2calc\
+A cost function Gamma can be defined as the misfit between v2calc and v2 integrated over the mesh. Gamma is a function of mi. The mi minimising Gamma is the 
+best estimate of m.
+
+This method is implemented in the script
+
 
