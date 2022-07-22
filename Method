@@ -22,6 +22,7 @@ Step 3) Minimise the misfit between v2 and v2calc\
 A cost function Gamma can be defined as the misfit between v2calc and v2 integrated over the mesh. Gamma is a function of mi. The mi minimising Gamma is the 
 best estimate of m.
 
-This method is implemented in the script
+This method is implemented in the script mSelection/mSelect oand the function mSelection/mSelectFunction which can be called with the script
+mSelection/mSelectUsingFunction.
 
 
