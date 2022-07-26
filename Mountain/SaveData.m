@@ -16,9 +16,8 @@ save('SurfaceVelocityData2AmeshRRm3.mat','FuMeas','FvMeas','FerrMeas')
 %% White noise
 clear
 load("MyData_Geom1meshRRm3.mat","CtrlVar","time","F","length","hmax")
-sigma=5;
-err = sigma*randn(size(F.ub)); % random error added to the measurements
-FerrMeas = F.ub*0+sigma; %always 1 because I know the error
+err = randn(size(F.ub)); % random error added to the measurements
+FerrMeas = F.ub*0+1;
 FuMeas = F.ub+err;
 FvMeas = F.vb+err;
 save('SurfaceVelocityData1AmeshRRm3GN1.mat','FuMeas','FvMeas','FerrMeas')
